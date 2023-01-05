@@ -1,0 +1,9 @@
+for ($i = 1; $i -le 10; $i++) {
+    $username = "User$i"
+    $lastname = "Number$i"
+    $password = ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force
+    New-LocalUser -Name $username -Password $password
+    Set-LocalUser -Name $username -DisplayName "$username $lastname"
+}
+
+Create 10 users with first name and last name and password
